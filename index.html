@@ -1,1 +1,201 @@
-<p>Hello world<p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <title>我的个人博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #f6f8fb;
+            --card-color: #ffffff;
+            --text-color: #333;
+            --sub-text: #666;
+            --accent: #6c8cff;
+            --radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        header {
+            margin-bottom: 32px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+        }
+
+        header p {
+            margin-top: 6px;
+            color: var(--sub-text);
+        }
+
+        /* 主体布局 */
+        .layout {
+            display: grid;
+            grid-template-columns: 30% 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        /* 左侧 */
+        .sidebar {
+            position: sticky;
+            top: 20px;
+        }
+
+        .card {
+            background: var(--card-color);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            color: var(--accent);
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--sub-text);
+        }
+
+        .info-list li {
+            margin-bottom: 8px;
+        }
+
+        .timeline-item {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .timeline-item span {
+            color: var(--sub-text);
+            font-size: 0.9rem;
+        }
+
+        /* 右侧日记 */
+        .diary .entry {
+            margin-bottom: 24px;
+        }
+
+        .diary .date {
+            font-size: 0.9rem;
+            color: var(--sub-text);
+            margin-bottom: 6px;
+        }
+
+        footer {
+            text-align: center;
+            margin: 40px 0 20px;
+            color: var(--sub-text);
+            font-size: 0.9rem;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 900px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>zts的个人博客</h1>
+        <p>记录生活 · 分享经历 · 简单表达</p>
+    </header>
+
+    <main class="layout">
+        <!-- 左侧固定信息 -->
+        <aside class="sidebar">
+            <section class="card">
+                <h2>个人简介</h2>
+                <p>
+                    你好，这里是我的个人博客。
+                    我会在这里记录自己的经历、思考与日常生活。
+                </p>
+            </section>
+
+            <section class="card">
+                <h2>个人经历</h2>
+                <div class="timeline-item">
+                    <strong>2023 - 至今</strong>
+                    <span>｜学习 / 工作</span>
+                </div>
+                <div class="timeline-item">
+                    <strong>2021 - 2023</strong>
+                    <span>｜探索阶段</span>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>基本信息</h2>
+                <ul class="info-list">
+                    <li>📍 地区：中国河北</li>
+                    <li>💻 兴趣：吉他 / minecraft</li>
+                    <li>📮 Email：keleaihe1@gmail.com</li>
+                </ul>
+            </section>
+        </aside>
+
+        <!-- 右侧日记 -->
+        <section class="diary">
+            <!-- 以后直接复制 entry 即可 -->
+
+            <article class="card entry">
+                <div class="date">2025-01-02</div>
+                <p>
+                    调整了页面布局，把简介固定在左侧，阅读体验好了很多。
+                </p>
+            </article>
+
+            <article class="card entry">
+                <div class="date">2025-01-01</div>
+                <p>
+                    今天开始搭建个人博客，决定用极简的方式记录生活。
+                </p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        © 2025 zts · All rights reserved
+    </footer>
+</div>
+
+</body>
+</html>
